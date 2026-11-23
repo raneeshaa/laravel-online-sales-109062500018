@@ -6,7 +6,7 @@ Aplikasi praktikum penjualan online (Admin dan Pelanggan) berbasis Laravel 13.
 - PHP 8.3 atau lebih baru, Composer, MySQL/MariaDB, Git
 
 ## Instalasi
-git clone (url-repository) laravel-online-sales
+git clone (https://github.com/raneeshaa/laravel-online-sales-109062500018.git) laravel-online-sales
 cd laravel-online-sales
 composer install
 copy .env.example .env        (di Linux/macOS: cp .env.example .env)
