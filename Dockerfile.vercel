@@ -2,7 +2,7 @@ FROM node:20-alpine AS assets
 WORKDIR /app
 COPY package*.json vite.config.js ./
 COPY resources ./resources
-RUN npm ci && npm run build
+RUN npm install && npm run build
 
 FROM composer:2 AS vendor
 WORKDIR /app
