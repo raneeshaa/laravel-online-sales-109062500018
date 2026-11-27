@@ -19,11 +19,12 @@ Route::prefix('v1')->group(function () {
         Route::get('/auth/me', [AuthController::class, 'me']); 
         Route::post('/auth/logout', [AuthController::class, 'logout']); 
  
-        Route::middleware('role:customer')->group(function () { 
-            Route::post('/checkout', [CheckoutController::class, 'store']); 
-            Route::get('/orders', [CustomerOrderController::class, 'index']); 
-            Route::get('/orders/{order}', [CustomerOrderController::class, 'show']); 
-        }); 
+        Route::middleware('role:customer')->group(function () {
+        Route::post('/checkout', [CheckoutController::class, 'store']);
+        Route::get('/orders', [CustomerOrderController::class, 'index']);
+        Route::get('/orders/{order}', [CustomerOrderController::class, 'show']);
+        Route::patch('/orders/{order}/cancel', [CustomerOrderController::class, 'cancel']);
+        });
  
         Route::prefix('admin')->middleware('role:admin')->group(function () { 
             Route::get('/orders', [AdminOrderController::class, 'index']); 
